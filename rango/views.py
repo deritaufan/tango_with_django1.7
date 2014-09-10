@@ -137,7 +137,7 @@ def register(request):
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             website = profile.cleaned_data['website']
-            #picture = profile.cleaned_data['picture']
+            picture = profile.cleaned_data['picture']
 
             salt = hashlib.sha1(str(random.random())).hexdigest()[:5]
             activation_key = hashlib.sha1(salt+email).hexdigest()
