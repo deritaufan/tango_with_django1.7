@@ -1,0 +1,9 @@
+{% extends 'rango/base.html' %}
+
+{% block title %}Email activation{% endblock %}
+{% block body_block %}
+<strong>{{ username }}</strong>, thanks for singing up.
+<br/>
+To activate your account please click below link:
+<a href="http://127.0.0.1:8000/rango/confirm/{{ activation_key }}">http://127.0.0.1:8000/rango/confirm/{{ activation_key }}</a>
+{% endblock %}
