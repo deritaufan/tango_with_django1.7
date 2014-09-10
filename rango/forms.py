@@ -61,7 +61,7 @@ class UserForm(UserCreationForm):
         return user
 
 class UserProfileForm(forms.ModelForm):
-    website = forms.URLField(help_text="Please enter your website", required=False, widget=forms.PasswordInput(attrs={'placeholder': 'Website'}))
+    website = forms.URLField(help_text="Please enter your website", required=False, widget=forms.URLField(attrs={'placeholder': 'Website'}))
     picture = forms.ImageField(help_text="Select a profile image to upload", required=False)
 
     class Meta:
