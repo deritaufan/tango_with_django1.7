@@ -32,11 +32,12 @@ class PageForm(forms.ModelForm):
         return cleaned_data
 
 class UserForm(UserCreationForm):
-    username = forms.CharField(help_text="Please enter a username")
+    username = forms.CharField(help_text="Please enter a username", widget=forms.TextInput(attrs={'placeholder': 'Username'}))
     email = forms.EmailField(help_text="Please enter your email", required=True, widget=forms.TextInput(attrs={'placeholder': 'E-mail address'}))
-    first_name = forms.CharField(help_text="Please enter your first name", required=True)
-    last_name = forms.CharField(help_text="Please enter your last name", required=True)
-    password1 = forms.CharField(widget=forms.PasswordInput(), help_text="Please enter a password")
+    first_name = forms.CharField(help_text="Please enter your first name", required=True, widget=forms.TextInput(attrs={'placeholder': 'First name'}))
+    last_name = forms.CharField(help_text="Please enter your last name", required=True, widget=forms.TextInput(attrs={'placeholder': 'Last name'}))
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}), help_text="Please enter a password")
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}), help_text="Please enter a password")
 
     class Meta:
         model = User
@@ -60,7 +61,7 @@ class UserForm(UserCreationForm):
         return user
 
 class UserProfileForm(forms.ModelForm):
-    website = forms.URLField(help_text="Please enter your website", required=False)
+    website = forms.URLField(help_text="Please enter your website", required=False, widget=forms.PasswordInput(attrs={'placeholder': 'Website'}))
     picture = forms.ImageField(help_text="Select a profile image to upload", required=False)
 
     class Meta:
