@@ -61,7 +61,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'rangodbs',
         'USER': 'root',
-        'PASSWORD': 'Taufan',
+        'PASSWORD': 'root',
     }
 }
 
